@@ -6,8 +6,8 @@ import { Utils } from "./api/Utils";
 
 var id = "OmegaEternity";
 var name = "Omega Eternity";
-var description = "A basic theory.";
-var authors = "Karen";
+var description = "jwklong";
+var authors = "jwklong";
 var version = 1;
 
 var currency, currency_second;
