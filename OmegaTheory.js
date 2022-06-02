@@ -11,7 +11,7 @@ var authors = "Karen";
 var version = 1;
 
 var currency, currency_second;
-var c1, c2, c3, c4, c5;
+var c1, c2, c3, c4, c5, c6;
 var c1Exp, c2Exp;
 
 var achievement1, achievement2;
@@ -66,7 +66,7 @@ var init = () => {
 
     // c6
     {
-        let getDesc = (level) => "c_5=" + getC6(level).toString(0);
+        let getDesc = (level) => "c_6=" + getC6(level).toString(0);
         c6 = theory.createUpgrade(5, currency, new ExponentialCost(1.3e5, Math.log2(10)));
         c6.getDescription = (_) => Utils.getMath(getDesc(c6.level));
         c6.getInfo = (amount) => Utils.getMathTo(getInfo(c6.level), getInfo(c6.level + amount));
