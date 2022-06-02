@@ -175,7 +175,7 @@ var getPublicationMultiplierFormula = (symbol) => "\\frac{{" + symbol + "}^{1.00
 var getTau = () => currency.value.pow(0.1);
 var get2DGraphValue = () => Math.PI;
 
-var getC1 = (level) => BigNumber.from(0.1 * level * getC4(c4.level)) 
+var getC1 = (level) => BigNumber.from(0.1 * level) * getC4(c4.level)
 var getC2 = (level) => BigNumber.from(0.5 * level)
 var getC3 = (level) => BigNumber.from(2 * level)
 var getC4 = (level) => Utils.getStepwisePowerSum(level, 100, 9, 1);
