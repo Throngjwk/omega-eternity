@@ -98,6 +98,21 @@ var init = () => {
     
     /////////////////
     //// Achievements
+    let minute = 60;
+    let hour = 3600;
+    let day = 86400;
+    let week = 86400 * 7;
+    let year = 86400 * 365;
+    let million = 1e6;
+    let dialogue = 1e10;
+    let quadrillion = 1e15;
+    let guppy = 1e20;
+    let returningscookie = 1.25231e36;
+    let quadrupledialogue = 1e40;
+    let vigintillion = 1e63;
+    let closetoend = 1e72;
+    let endgame = 1e81;
+    
     achievement1 = theory.createAchievement(0, "?", "Start to Playing.", () => c1.level > 0);
     achievement2 = theory.createAchievement(1, "You Having Do?", "Minute", () => currency_second.value > minute);
     achievement3 = theory.createAchievement(2, "What", "pi minutes", () => currency_second.value > Math.PI * minute);
