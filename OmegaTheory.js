@@ -154,10 +154,6 @@ var getPrimaryEquation = () => {
     return result;
 }
 
-function illions(illionNumber) {
-    return BigNumber.from(1000).pow(illionNumber);
-}
-
 var getSecondaryEquation = () => theory.latexSymbol + "=\\max\\rho";
 var getPublicationMultiplier = (tau) => tau.pow(1.003);
 var getPublicationMultiplierFormula = (symbol) => "\\frac{{" + symbol + "}^{1.003}}{3}";
