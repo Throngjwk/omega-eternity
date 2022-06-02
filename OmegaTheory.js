@@ -165,6 +165,7 @@ var getC2 = (level) => BigNumber.from(0.5 * level)
 var getC3 = (level) => BigNumber.from(2 * level)
 var getC4 = (level) => Utils.getStepwisePowerSum(level, 100, 9, 1);
 var getC5 = (level) => BigNumber.from(20 * level)
+var getC6 = (level) => BigNumber.from(300 * level)
 var getC1Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 var getC2Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 
