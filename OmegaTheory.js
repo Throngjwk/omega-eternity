@@ -135,7 +135,7 @@ var tick = (elapsedTime, multiplier) => {
     let closetoend = 1e72;
     let endgame = 1e81;
     currency_second.value += BigNumber.from(0.1)
-    currency.value += getC1(c1.levl) + getC2(c2.level) + getC3(c3.level) + getC5(c5.level) + getC6(c6.level);
+    currency.value += getC1(c1.level) + getC2(c2.level) + getC3(c3.level) + getC5(c5.level) + getC6(c6.level);
 }
 
 var getPrimaryEquation = () => {
