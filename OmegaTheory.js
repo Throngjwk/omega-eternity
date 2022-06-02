@@ -158,7 +158,7 @@ var getSecondaryEquation = () => theory.latexSymbol + "=\\max\\rho";
 var getPublicationMultiplier = (tau) => tau.pow(1.003);
 var getPublicationMultiplierFormula = (symbol) => "\\frac{{" + symbol + "}^{1.003}}{3}";
 var getTau = () => currency.value.pow(0.1);
-var get2DGraphValue = () => Math.PI + currency_second.value;
+var get2DGraphValue = () => Math.PI;
 
 var getC1 = (level) => BigNumber.from(0.1 * level) * getC4(c4.level);
 var getC2 = (level) => BigNumber.from(0.5 * level)
