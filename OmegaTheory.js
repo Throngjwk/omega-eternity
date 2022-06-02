@@ -43,7 +43,7 @@ var init = () => {
     // c3
     {
         let getDesc = (level) => "c_3=" + getC3(level).toString(0);
-        c3 = theory.createUpgrade(2, currency, new ExponentialCost(120, Math.log2(10)));
+        c3 = theory.createUpgrade(2, currency, new ExponentialCost(120, Math.log2(1.4)));
         c3.getDescription = (_) => Utils.getMath(getDesc(c3.level));
         c3.getInfo = (amount) => Utils.getMathTo(getInfo(c3.level), getInfo(c3.level + amount));
     }
@@ -59,7 +59,7 @@ var init = () => {
     // c5
     {
         let getDesc = (level) => "c_5=" + getC5(level).toString(0);
-        c5 = theory.createUpgrade(4, currency, new ExponentialCost(1.2e4, Math.log2(10)));
+        c5 = theory.createUpgrade(4, currency, new ExponentialCost(1.2e4, Math.log2(1.4)));
         c5.getDescription = (_) => Utils.getMath(getDesc(c5.level));
         c5.getInfo = (amount) => Utils.getMathTo(getInfo(c5.level), getInfo(c5.level + amount));
     }
@@ -67,7 +67,7 @@ var init = () => {
     // c6
     {
         let getDesc = (level) => "c_6=" + getC6(level).toString(0);
-        c6 = theory.createUpgrade(5, currency, new ExponentialCost(1.3e5, Math.log2(10)));
+        c6 = theory.createUpgrade(5, currency, new ExponentialCost(1.3e5, Math.log2(1.4)));
         c6.getDescription = (_) => Utils.getMath(getDesc(c6.level));
         c6.getInfo = (amount) => Utils.getMathTo(getInfo(c6.level), getInfo(c6.level + amount));
     }
@@ -175,7 +175,7 @@ var getPublicationMultiplierFormula = (symbol) => "\\frac{{" + symbol + "}^{1.00
 var getTau = () => currency.value.pow(0.1);
 var get2DGraphValue = () => Math.PI;
 
-var getC1 = (level) => BigNumber.from(0.1 * level) * getC4(c4.level);
+var getC1 = (level) => BigNumber.from(0.1 * level * getC4(c4.level)) 
 var getC2 = (level) => BigNumber.from(0.5 * level)
 var getC3 = (level) => BigNumber.from(2 * level)
 var getC4 = (level) => Utils.getStepwisePowerSum(level, 100, 9, 1);
