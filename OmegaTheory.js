@@ -122,11 +122,12 @@ var init = () => {
     let endgame = 1e81;
     
     achievement1 = theory.createAchievement(0, "?", "Start to Playing.", () => c1.level > 0);
-    achievement2 = theory.createAchievement(1, "You Having Do?", "Minute", () => currency_second.value > minute);
-    achievement3 = theory.createAchievement(2, "What", "pi minutes", () => currency_second.value > Math.PI * minute);
-    achievement4 = theory.createAchievement(3, "ИOI⅃⅃IM", "reverse text?", () => currency.value > million);
-    achievement5 = theory.createAchievement(4, "Sugars", "Reach 1e8 Cookies.", () => currency.value > 100 * million);
-    achievement6 = theory.createSecretAchievement(5, "Happend This?", "Reach 1.211e36 cookies", "Rewards of level", () => currency.value > returningscookie);
+    achievement2 = theory.createAchievement(1, "Cookie Bar", "gradma", () => c2.level > 0);
+    achievement3 = theory.createAchievement(2, "You Having Do?", "Minute", () => currency_second.value > minute);
+    achievement4 = theory.createAchievement(3, "What", "pi minutes", () => currency_second.value > Math.PI * minute);
+    achievement5 = theory.createAchievement(4, "ИOI⅃⅃IM", "reverse text?", () => currency.value > million);
+    achievement6 = theory.createAchievement(5, "Sugars", "Reach 1e8 Cookies.", () => currency.value > 100 * million);
+    achievement7 = theory.createSecretAchievement(6, "Happend This?", "Reach 1.211e36 cookies", "Rewards of level", () => currency.value > returningscookie);
 
     ///////////////////
     //// Story chapters
