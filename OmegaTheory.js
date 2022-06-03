@@ -11,7 +11,7 @@ var authors = "Karen";
 var version = 1;
 
 var currency, currency_second;
-var c1, c2, c3, c4, c5, c6;
+var c1, c2, c3, c4, c5, c6, c7;
 var c1Exp, c2Exp;
 
 var achievement1, achievement2;
@@ -71,6 +71,14 @@ var init = () => {
         c6.getDescription = (_) => Utils.getMath(getDesc(c6.level));
         c6.getInfo = (amount) => Utils.getMathTo(getInfo(c6.level), getInfo(c6.level + amount));
     }
+    
+    // c7
+    {
+        let getDesc = (level) => "c_7=" + getC7(level).toString(0);
+        c7 = theory.createUpgrade(6, currency, new ExponentialCost(1.4e6, Math.log2(1.3)));
+        c7.getDescription = (_) => Utils.getMath(getDesc(c7.level));
+        c7.getInfo = (amount) => Utils.getMathTo(getInfo(c7.level), getInfo(c7.level + amount));
+    }
 
     /////////////////////
     // Permanent Upgrades
@@ -117,7 +125,8 @@ var init = () => {
     achievement2 = theory.createAchievement(1, "You Having Do?", "Minute", () => currency_second.value > minute);
     achievement3 = theory.createAchievement(2, "What", "pi minutes", () => currency_second.value > Math.PI * minute);
     achievement4 = theory.createAchievement(3, "ИOI⅃⅃IM", "reverse text?", () => currency.value > million);
-    achievement5 = theory.createSecretAchievement(4, "Happend This?", "Reach 1.211e36 cookies", "Rewards of level", () => currency.value > returningscookie);
+    achievement5 = theory.createAchievement(4, "Sugars", "Reach 1e8 Cookies.", () => currency.value > 100 * million);
+    achievement6 = theory.createSecretAchievement(5, "Happend This?", "Reach 1.211e36 cookies", "Rewards of level", () => currency.value > returningscookie);
 
     ///////////////////
     //// Story chapters
@@ -150,7 +159,7 @@ var tick = (elapsedTime, multiplier) => {
     let closetoend = 1e72;
     let endgame = 1e81;
     currency_second.value += BigNumber.from(0.1)
-    currency.value += getC1(c1.level) + getC2(c2.level) + getC3(c3.level) + getC5(c5.level) + getC6(c6.level);
+    currency.value += getC1(c1.levl) + getC2(c2.level) + getC3(c3.level) + getC5(c5.level) + getC6(c6.level) + getC7(c7.level);
 }
 
 var getPrimaryEquation = () => {
@@ -181,6 +190,7 @@ var getC3 = (level) => BigNumber.from(2 * level)
 var getC4 = (level) => Utils.getStepwisePowerSum(level, 100, 9, 1);
 var getC5 = (level) => BigNumber.from(20 * level)
 var getC6 = (level) => BigNumber.from(300 * level)
+var getC7 = (level) => BigNumber.from(4000 * level)
 var getC1Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 var getC2Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 
