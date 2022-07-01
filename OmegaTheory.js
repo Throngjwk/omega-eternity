@@ -80,6 +80,22 @@ var init = () => {
         c7.getInfo = (amount) => Utils.getMathTo(getInfo(c7.level), getInfo(c7.level + amount));
     }
 
+    // c8
+    {
+        let getDesc = (level) => "c_8=" + getC8(level).toString(0);
+        c8 = theory.createUpgrade(7, currency, new ExponentialCost(1.5e7, Math.log2(1.3)));
+        c8.getDescription = (_) => Utils.getMath(getDesc(c8.level));
+        c8.getInfo = (amount) => Utils.getMathTo(getInfo(c8.level), getInfo(c8.level + amount));
+    }
+
+    // c9
+    {
+        let getDesc = (level) => "c_9=" + getC9(level).toString(0);
+        c9 = theory.createUpgrade(8, currency, new ExponentialCost(1e7, Math.log2(10)));
+        c9.getDescription = (_) => Utils.getMath(getDesc(c9.level));
+        c9.getInfo = (amount) => Utils.getMathTo(getInfo(c9.level), getInfo(c9.level + amount));
+    }
+
     /////////////////////
     // Permanent Upgrades
     theory.createPublicationUpgrade(0, currency, 1e9);
@@ -186,12 +202,14 @@ var getTau = () => currency.value.pow(0.1);
 var get2DGraphValue = () => Math.PI;
 
 var getC1 = (level) => BigNumber.from(0.1 * level) * getC4(c4.level)
-var getC2 = (level) => BigNumber.from(0.5 * level)
+var getC2 = (level) => BigNumber.from(0.5 * level) * getC9(c9.level)
 var getC3 = (level) => BigNumber.from(2 * level)
 var getC4 = (level) => Utils.getStepwisePowerSum(level, 100, 9, 1);
 var getC5 = (level) => BigNumber.from(20 * level)
 var getC6 = (level) => BigNumber.from(300 * level)
 var getC7 = (level) => BigNumber.from(4000 * level)
+var getC8 = (level) => BigNumber.from(50000 * level)
+var getC9 = (level) => Utils.getStepwisePowerSum(level, 100, 9, 1);
 var getC1Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 var getC2Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 
