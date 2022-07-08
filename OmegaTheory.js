@@ -162,7 +162,7 @@ var init = () => {
     updateAvailability();
 
     var popup = ui.createPopup({
-        title: "My Popup",
+        title: "Main Menu",
         content: ui.createStackLayout({
             children: [
                 ui.createLabel({
@@ -176,18 +176,51 @@ var init = () => {
                     columnDefinitions: ["20*", "30*", "auto"],
                     rowDefinitions:["auto"],
                     children: [
-                        ui.createButton({text: "Original", row: 0, column: 0}),
-                        ui.createButton({text: "Binary", row: 0, column: 1}),
-                        ui.createButton({text: "Letters", row: 0, column: 2, padding: new Thickness(0)}),
-                        ui.createButton({text: "Emojis", row: 1, column: 0}),
-                        ui.createButton({text: "Coming soon.", row: 1, column: 1}),
-                        ui.createButton({text: "Coming soon.", row: 1, column: 2}),
+                        ui.createButton({text: "Original",
+                         row: 0,
+                         column: 0,
+                         onClicked: () => {
+                            eqUpgNumber = 0;
+                         }
+                        }),
+                        ui.createButton({text: "Binary",
+                         row: 0, 
+                         column: 1,
+                         onClicked: () => {
+                            eqUpgNumber = 1;
+                         }
+                        }),
+                        ui.createButton({text: "Letters",
+                         row: 0, 
+                         column: 2, 
+                         padding: new Thickness(0),
+                         onClicked: () => {
+                            eqUpgNumber = 2;
+                         }
+                        }),
+                        ui.createButton({text: "Emojis",
+                         row: 1, 
+                         column: 0,
+                         onClicked: () => {
+                            eqUpgNumber = 3;
+                         }
+                        }),
+                        ui.createButton({text: "Coming soon.",
+                         row: 1,
+                         column: 1
+                        }),
+                        ui.createButton({text: "Coming soon.", 
+                         row: 1, 
+                         column: 2
+                        }),
                     ]
                 }),
                 ui.createButton({text: "Close", onClicked: () => popup.hide()})
             ]
         })
     });
+
+    popup.show();
 }
 
 var updateAvailability = () => {
@@ -212,7 +245,7 @@ var tick = (elapsedTime, multiplier) => {
     let closetoend = 1e72;
     let endgame = 1e81;
     currency_second.value += BigNumber.from(0.1)
-    currency.value += getC1(c1.level) + getC2(c2.level) + getC3(c3.level) + getC5(c5.level) + getC6(c6.level) + getC7(c7.level);
+    currency.value += getC1(c1.level) + getC2(c2.level) + getC3(c3.level) + getC5(c5.level) + getC6(c6.level) + getC7(c7.level) + getC8(c8.level);
 }
 
 var getPrimaryEquation = () => {
