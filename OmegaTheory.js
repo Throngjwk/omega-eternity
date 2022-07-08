@@ -160,6 +160,34 @@ var init = () => {
     chapter3 = theory.createStoryChapter(2, "Now", "M \nA \nJ \nO \nR \n\u7777", () => currency.value > year);
 
     updateAvailability();
+
+    var popup = ui.createPopup({
+        title: "My Popup",
+        content: ui.createStackLayout({
+            children: [
+                ui.createLabel({
+                    text: "Equaltion Names Upgrades",
+                    horizontalTextAlignment: TextAlignment.CENTER,
+                    fontAttributes: FontAttributes.BOLD,
+                    fontSize: 25,
+                    padding: Thickness(0, 18, 0, 18),
+                }),
+                ui.createGrid({
+                    columnDefinitions: ["20*", "30*", "auto"],
+                    rowDefinitions:["auto"],
+                    children: [
+                        ui.createButton({text: "Original", row: 0, column: 0}),
+                        ui.createButton({text: "Binary", row: 0, column: 1}),
+                        ui.createButton({text: "Letters", row: 0, column: 2, padding: new Thickness(0)}),
+                        ui.createButton({text: "Emojis", row: 1, column: 0}),
+                        ui.createButton({text: "Coming soon.", row: 1, column: 1}),
+                        ui.createButton({text: "Coming soon.", row: 1, column: 2}),
+                    ]
+                }),
+                ui.createButton({text: "Close", onClicked: () => popup.hide()})
+            ]
+        })
+    });
 }
 
 var updateAvailability = () => {
